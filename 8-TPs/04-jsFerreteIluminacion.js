@@ -10,5 +10,138 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
+ 	/*TP N° 4 
+	Gaston Alejandro Gayan
+	Div. TT Ingreso Feb 2021*/
+
+ 	var valorLampara;
+ 	var cantidad;
+ 	var total;
+ 	var marca;
+ 	var valorIIBB;
+ 	valorLampara = 35;
+ 	cantidad = txtIdCantidad.value;
+ 	cantidad = parseInt (cantidad);
+ 	marca = Marca.value;
+ 	total = cantidad * valorLampara;
+ 	var positivo;
+ 	positivo = cantidad > 5;
+ 	switch (positivo)
+ 		{
+ 			case true:
+ 				total = total *0.5;
+ 			break;
+ 			case false:
+ 			switch (cantidad)
+ 			{
+ 				case 5:
+ 				switch (marca)
+ 				{
+ 					case "ArgentinaLuz":
+ 						total = total *0.6;
+ 					break;
+ 					default:
+ 						total = total * 0.7;
+ 				}
+ 			break;
+ 			case 4:
+ 				switch (marca)
+ 				{
+ 					case "ArgentinaLuz":
+ 					case "FelipeLamparas"
+ 						total = total *0.75;
+ 					break;
+ 					default:
+ 						total = total * 0.8;
+ 				}
+ 			break;
+ 			case 3:
+ 				switch (marca)
+ 				{
+ 					case "ArgentinaLuz":
+ 						total = total *0.85;
+ 					break;
+ 					case "FelipeLamparas"
+ 						total = total * 0.9;
+ 			case 2:
+ 				switch (marca)
+ 				{
+ 					case "ArgentinaLuz":
+ 					case "FelipeLamparas"
+ 						total = total *0.75;
+ 					break;
+ 					default:
+ 						total = total * 0.8;
+ 				}
+ 			break;
+ 		}	
+ 			break;
+ 		} 	
  	
+ 	}
+
+ 	/*if (cantidad > 5)
+ 	{
+ 		
+ 		total = total * 0.5;
+ 	}
+ 	else
+ 	{
+ 		if (cantidad==5)
+ 			{
+ 				if (marca=="ArgentinaLuz")
+ 				{
+ 					total = total * 0.6;
+ 				}
+ 				else
+ 				{
+ 				total = total * 0.7;
+ 				}
+ 			}
+ 			
+	 		if (cantidad==4) 
+ 			{
+ 				if ((marca=="ArgentinaLuz")||(marca=="FelipeLamparas"))
+ 				{
+ 					total = total * 0.75;
+ 				}
+ 			}
+ 			else
+ 			{
+ 				total = total * 0.8;
+ 			}
+ 		if (cantidad==3) 
+ 		{
+ 			if (marca=="ArgentinaLuz")
+ 				{
+ 					total = total * 0.85;
+ 				}
+ 			else
+ 			{
+ 				if(marca=="FelipeLamparas")
+ 				{
+ 					total = total * 0.9;
+ 				}
+ 				else
+ 				{
+ 					total = total * 0.95;
+ 				}
+ 			}
+ 		}
+ 	}
+ 	*/if (total > 120)
+ 	{
+ 		valorIIBB = total * 0.1;
+ 		total = total + valorIIBB;
+ 		txtIdprecioDescuento.value=total;
+ 		alert("Usted pago "+valorIIBB+" de IIBB")
+ 		
+ 	}
+ 	else
+ 	{
+ 		txtIdprecioDescuento.value=total;
+ 	}
+ 	txtIdprecioDescuento.value=total;
+
+
 }
